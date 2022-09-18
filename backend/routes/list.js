@@ -1,47 +1,28 @@
 import express from "express";
-import ListItem from "../models/listItemModel.js";
+import ListItem from "../models/listItemSchema.js";
+import {
+  createItem,
+  getList,
+  getItemById,
+  updateItemById,
+  deleteItemById,
+} from "../models/models.js";
 
 const router = express.Router();
 
 // GET the full list
-router.get("/", (req, res) => {
-  res.json({ message: "Welcome to the list GET everything route" });
-});
+router.get("/", getList);
 
 // GET one list item
-router.get("/:id", (req, res) => {
-  const id = Number(req.params.id);
-  res.json({ message: `Welcome to the list GET id:${id} route` });
-});
+router.get("/:id", getItemById);
 
 // POST a new item
-router.post("/", async (req, res) => {
-  const { ingredient, amount, unit } = req.body;
-
-  try {
-    const listItem = await ListItem.create({
-      ingredient,
-      amount,
-      unit,
-    });
-    res.status(200).json(listItem);
-  } catch (error) {
-    res.status(400).json({ error: error.message });
-  }
-
-  // res.json({ message: `Welcome to the list POST route` });
-});
+router.post("/", createItem);
 
 // DELETE one list item
-router.delete("/:id", (req, res) => {
-  const id = Number(req.params.id);
-  res.json({ message: `Welcome to the list DELETE id:${id} route` });
-});
+router.delete("/:id", deleteItemById);
 
 // UPDATE one list item
-router.patch("/:id", (req, res) => {
-  const id = Number(req.params.id);
-  res.json({ message: `Welcome to the list UPDATE id:${id} route` });
-});
+router.patch("/:id", updateItemById);
 
 export default router;
