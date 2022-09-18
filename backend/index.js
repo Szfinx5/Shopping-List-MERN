@@ -1,10 +1,17 @@
 import express from "express";
-// import cors from "cors";
+import cors from "cors";
 import listRouter from "./routes/list.js";
 import mongoose from "mongoose";
 
 const app = express();
 const PORT = process.env.PORT;
+
+const corsOptions = {
+  origin: "*",
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 
 // Middlewares
 app.use(express.json());
