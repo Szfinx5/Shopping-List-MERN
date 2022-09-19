@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ItemForm from "../Components/ItemForm";
 import Items from "../Components/Items";
 
 const Home = () => {
@@ -25,6 +26,7 @@ const Home = () => {
             <Items key={listItem._id} listItem={listItem} />
           ))}
       </div>
+      <ItemForm />
     </div>
   );
 };
