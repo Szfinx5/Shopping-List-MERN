@@ -7,7 +7,8 @@ const Home = () => {
 
   useEffect(() => {
     async function fetchShoppingList() {
-      const response = await fetch("http://localhost:4000/list");
+      const response = await fetch(`${process.env.REACT_APP_URL}/list`);
+      console.log("URL", `${process.env.REACT_APP_URL}/list`);
       console.log("response", response);
       const data = await response.json();
       console.log("data", data);

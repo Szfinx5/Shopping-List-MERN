@@ -9,7 +9,8 @@ const ItemForm = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     const item = { ingredient, amount, unit };
-    const response = await fetch("http://localhost:4000/list", {
+    const response = await (`${process.env.REACT_APP_URL}/list`,
+    {
       method: "POST",
       body: JSON.stringify(item),
       headers: {
