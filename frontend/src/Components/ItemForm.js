@@ -1,22 +1,25 @@
 import { useState } from "react";
+import useShoppingListContext from "../Components/hooks/useShoppingListContext";
 
 const ItemForm = () => {
+  const { dispatch } = useShoppingListContext();
   const [ingredient, setIngredient] = useState("");
   const [amount, setAmount] = useState("");
   const [unit, setUnit] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState(null);
 
   async function handleSubmit(e) {
     e.preventDefault();
     const item = { ingredient, amount, unit };
-    const response = await (`${process.env.REACT_APP_URL}/list`,
-    {
+    const response = await fetch(`${process.env.REACT_APP_URL}/list`, {
       method: "POST",
       body: JSON.stringify(item),
       headers: {
         "Content-Type": "application/json",
       },
     });
+    // console.log(response);
+    // console.log("Dispatch", dispatch);
     const body = await response.json();
 
     if (!response.ok) {
@@ -28,6 +31,7 @@ const ItemForm = () => {
       setUnit("");
       setError(null);
       console.log("New item was added ", body);
+      dispatch({ type: "CREATE_ITEM", payload: body });
     }
   }
 
