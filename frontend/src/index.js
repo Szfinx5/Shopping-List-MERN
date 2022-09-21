@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { ShoppingListContextProvider } from "./Components/hooks/ShoppingListContext";
+import { ShoppingListContextProvider } from "./hooks/ShoppingListContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

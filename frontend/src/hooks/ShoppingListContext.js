@@ -12,6 +12,12 @@ export const shoppingListReducer = (state, action) => {
       return {
         shoppingList: [action.payload, ...state.shoppingList],
       };
+    case "DELETE_ITEM":
+      return {
+        shoppingList: state.shoppingList.filter(
+          (item) => item._id !== action.payload._id
+        ),
+      };
     default:
       return state;
   }

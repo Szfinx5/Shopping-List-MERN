@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import ItemForm from "../Components/ItemForm";
 import Items from "../Components/Items";
-import useShoppingListContext from "../Components/hooks/useShoppingListContext";
+import useShoppingListContext from "../hooks/useShoppingListContext";
 
 const Home = () => {
   // const [shoppingList, setShoppingList] = useState(null);
