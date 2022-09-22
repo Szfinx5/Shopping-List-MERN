@@ -30,14 +30,17 @@ export async function createItem(req, res) {
 
   if (ingredient) {
     completedBoxes.push("ingredient");
+    console.log("ingredient " + completedBoxes);
   }
 
   if (amount) {
     completedBoxes.push("amount");
+    console.log("amount " + completedBoxes);
   }
 
-  if (amount) {
-    completedBoxes.push("amount");
+  if (unit) {
+    completedBoxes.push("unit");
+    console.log("unit " + completedBoxes);
   }
 
   if (completedBoxes.length < 3) {
