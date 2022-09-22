@@ -26,7 +26,25 @@ export async function getItemById(req, res) {
 export async function createItem(req, res) {
   const { ingredient, amount, unit } = req.body;
 
+  let completedBoxes = [];
+
+  if (ingredient) {
+    completedBoxes.push("ingredient");
+  }
+
+  if (amount) {
+    completedBoxes.push("amount");
+  }
+
+  if (amount) {
+    completedBoxes.push("amount");
+  }
+
+  if (completedBoxes.length < 3) {
+    return res.status(400).json({ error: "Please complete all the fields" });
+  }
   try {
+    console.log(completedBoxes);
     const listItem = await ListItem.create({
       ingredient,
       amount,

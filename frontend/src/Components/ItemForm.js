@@ -24,6 +24,7 @@ const ItemForm = () => {
 
     if (!response.ok) {
       setError(body.error);
+      console.log(body);
     }
     if (response.ok) {
       setIngredient("");
