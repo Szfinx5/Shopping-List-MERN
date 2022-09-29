@@ -1,5 +1,6 @@
 import React from "react";
 import useShoppingListContext from "../hooks/useShoppingListContext";
+import formatDistanceToNow from "date-fns/formatDistanceToNow";
 
 export default function Items({ listItem }) {
   const { dispatch } = useShoppingListContext();
@@ -25,8 +26,12 @@ export default function Items({ listItem }) {
         <strong>{listItem.amount + " " + listItem.unit}</strong>
       </p>
       <strong></strong>
-      <p>{listItem.createdAt}</p>
-      <span onClick={handleClick}>Delete</span>
+      <p>
+        {formatDistanceToNow(new Date(listItem.createdAt), { addSuffix: true })}
+      </p>
+      <span className="material-symbols-outlined" onClick={handleClick}>
+        Delete
+      </span>
     </div>
   );
 }

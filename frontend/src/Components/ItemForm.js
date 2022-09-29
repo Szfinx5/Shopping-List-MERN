@@ -24,14 +24,14 @@ const ItemForm = () => {
 
     if (!response.ok) {
       setError(body.error);
-      console.log(body);
+      // console.log(body);
     }
     if (response.ok) {
       setIngredient("");
       setAmount("");
       setUnit("");
       setError(null);
-      console.log("New item was added ", body);
+      // console.log("New item was added ", body);
       dispatch({ type: "CREATE_ITEM", payload: body });
     }
   }

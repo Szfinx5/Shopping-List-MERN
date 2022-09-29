@@ -12,7 +12,7 @@ const Home = () => {
       // console.log("URL", `${process.env.REACT_APP_URL}/list`);
       // console.log("response", response);
       const data = await response.json();
-      console.log("data", data);
+      // console.log("data", data);
       if (response.ok) {
         // setShoppingList(data);
         dispatch({ type: "SET_SHOPPING_LIST", payload: data });
