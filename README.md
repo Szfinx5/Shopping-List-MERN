@@ -10,6 +10,9 @@
 I was very interested to learn MongoDB. I thought, the best way to learn how to use it is to create a few applications using the Mongoose documentations.
 This Shopping list is the first such application, using the MERN tech stack.
 
+## Demo
+This application is hosted here: https://quiet-naiad-8122b3.netlify.app/ Pease have a try.   
+
 ## Front end
 The frontend is a React website written in JavaScript
 
@@ -19,6 +22,9 @@ The backend was written in Node.js using Express.js library to create the CRUD r
 ## Database
 In this app, I have used MongoDB, mainly because I was interested how it works and I wanted to learn how to use the MERN teck stack.
 
+
+## Next step
+I am planning to implement authentication based on JWT. It should be done in the following weeks.
 
 ## Tech Stack
 
