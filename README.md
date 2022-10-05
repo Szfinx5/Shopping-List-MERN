@@ -10,7 +10,7 @@
 I was very interested to learn MongoDB. I thought, the best way to learn how to use it is to create a few applications using the Mongoose documentations.
 This Shopping list is the first such application, using the MERN tech stack.
 
-## Demo
+## Demo      
 This application is hosted here: https://quiet-naiad-8122b3.netlify.app/ Pease have a try.   
 
 ## Front end
