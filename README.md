@@ -3,7 +3,7 @@
 
 <h1 align="center">Shopping list</h1>
 
-</div>
+</div>              
 
 
 ## What is this application?
